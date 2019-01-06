@@ -1,2 +1,3 @@
 # scyther
+
 A Discord bot.
