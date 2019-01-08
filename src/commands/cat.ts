@@ -1,6 +1,10 @@
-const axios = require('axios');
+// ABSOLUTE IMPORTS
+import axios from 'axios';
 
-const embedCreator = url => ({
+// TYPES
+import {Message} from 'discord.js';
+
+const embedCreator = (url: string) => ({
   color: 0x42b983,
   title: 'Here, have a cat...',
   image: {
@@ -11,10 +15,10 @@ const embedCreator = url => ({
 module.exports = {
   name: 'cat',
   description: "Here's a cat.",
-  execute(message, args) {
+  execute(message: Message) {
     axios
       .get('http://aws.random.cat/meow')
-      .then(e => message.channel.send({embed: embedCreator(e.data.file)}))
-      .catch(e => 'Something went wrong! No cats for you.');
+      .then((e: any) => message.channel.send({embed: embedCreator(e.data.file)}))
+      .catch((e: any) => 'Something went wrong! No cats for you.');
   },
 };

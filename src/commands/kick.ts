@@ -1,4 +1,7 @@
-const embedCreator = taggedUser => ({
+// TYPES
+import {User, Message} from 'discord.js';
+
+const embedCreator = (taggedUser: User) => ({
   color: 0x42b983,
   title: `'Bout to show ${taggedUser.username} the flowers`,
   image: {
@@ -9,7 +12,7 @@ const embedCreator = taggedUser => ({
 module.exports = {
   name: 'kick',
   description: 'Kicks the user from the server.',
-  execute(message, args) {
+  execute(message: Message) {
     if (!message.mentions.users.size) {
       message.reply('You need to tag a user in order to kick them!');
     }

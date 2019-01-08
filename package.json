@@ -6,13 +6,13 @@
   "author": "Michael Kovich <kovich@michaelkovich.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "start": "nodemon dist/index.js"
+    "start": "tsc && nodemon dist/index.js"
   },
   "devDependencies": {
     "typescript": "^3.2.2"
   },
   "dependencies": {
+    "@types/node": "^10.12.18",
     "axios": "^0.18.0",
     "discord.js": "^11.4.2",
     "nodemon": "^1.18.4",

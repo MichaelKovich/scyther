@@ -1,6 +1,10 @@
-const axios = require('axios');
+// ABSOLUTE IMPORTS
+import axios from 'axios';
 
-const embedCreator = url => ({
+// TYPES
+import {Message} from 'discord.js';
+
+const embedCreator = (url: string) => ({
   color: 0x42b983,
   title: 'Here, have a dog...',
   image: {
@@ -11,10 +15,10 @@ const embedCreator = url => ({
 module.exports = {
   name: 'dog',
   description: "Here's a dog.",
-  execute(message, args) {
+  execute(message: Message) {
     axios
       .get('https://dog.ceo/api/breeds/image/random')
-      .then(e => message.channel.send({embed: embedCreator(e.data.message)}))
-      .catch(e => 'Something went wrong! No dogs for you.');
+      .then((e: any) => message.channel.send({embed: embedCreator(e.data.message)}))
+      .catch((e: any) => 'Something went wrong! No dogs for you.');
   },
 };
