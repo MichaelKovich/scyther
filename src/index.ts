@@ -1,14 +1,23 @@
-// ABSOLUTE IMPORTS
+/*********************************************************************
+ * Absolute Imports
+ ********************************************************************/
 const fs = require('fs');
 const Discord = require('discord.js');
 
-// RELATIVE IMPORTS
+/*********************************************************************
+ * Relative Imports
+ ********************************************************************/
 const {prefix, token} = require(`${__dirname}/../config/config.js`);
 const {greetings} = require(`${__dirname}/utils/constants`);
 
-// TYPES
+/*********************************************************************
+ * TypeScript
+ ********************************************************************/
 import {GuildMember, Message} from 'discord.js';
 
+/*********************************************************************
+ * Component
+ ********************************************************************/
 const commandFiles = fs
   .readdirSync(`${__dirname}/commands`)
   .filter((file: string) => file.endsWith('.js'));
