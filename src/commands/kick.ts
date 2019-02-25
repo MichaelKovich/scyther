@@ -15,7 +15,7 @@ const embedCreator = (taggedUser: User) => ({
   }
 });
 
-module.exports = {
+const Kick = {
   name: 'kick',
   description: 'Kicks the user from the server.',
   execute(message: Message) {
@@ -26,3 +26,5 @@ module.exports = {
     message.channel.send({embed: embedCreator(taggedUser)});
   }
 };
+
+module.exports = Kick;

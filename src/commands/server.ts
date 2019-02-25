@@ -1,4 +1,4 @@
-module.exports = {
+const Server = {
   name: 'server',
   description: 'Provides the user with information about the server.',
   execute(message: any) {
@@ -11,3 +11,5 @@ module.exports = {
     );
   }
 };
+
+module.exports = Server;
