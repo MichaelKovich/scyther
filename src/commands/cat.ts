@@ -19,7 +19,7 @@ const embedCreator = (url: string) => ({
   }
 });
 
-module.exports = {
+const Cat = {
   name: 'cat',
   description: "Here's a cat.",
   execute(message: Message) {
@@ -31,3 +31,5 @@ module.exports = {
       .catch((e: any) => 'Something went wrong! No cats for you.');
   }
 };
+
+module.exports = Cat;
